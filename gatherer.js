@@ -25,11 +25,11 @@ var config = {
         },
         'set' : {
             // Value sets
-            'MMA': 0, 'MM2': 0, 'EMA': 0, // 'VMA' : 0,
+//            'MMA': 0, 'MM2': 0, 'EMA': 0, // 'VMA' : 0,
             // Conspiracy sets
-            'CNS': 0, // 'CN2' : 0,
+//            'CNS': 0, // 'CN2' : 0,
             // Commander sets
-            'C14': 0, 'C15': 0, // 'C16': 1
+//            'C14': 0, 'C15': 0, // 'C16': 1
             /*
             // Duel Decks
             'DD3_DVD' : 1,       'DD3_EVG' : 1,             'DD3_GVL' : 1,             'DD3_JVC' : 1,             'BVC' : 1,
@@ -63,11 +63,11 @@ var config = {
             'M15' : 0,
             */
             // Khans of Tarkir
-            'KTK' : 1, 'FRF' : 1, 'DTK' : 1,
+//            'KTK' : 1, 'FRF' : 1, 'DTK' : 1,
             // Origins
-            'ORI' : 1,
+//            'ORI' : 1,
             // Battle for Zendikar block
-            'BFZ' : 1, 'OGW' : 1, // 'EXP' : 1,
+//            'BFZ' : 1, 'OGW' : 1, // 'EXP' : 1,
             // Shadows over Innistrad block
             'SOI' : 1, 'EMN' : 1
             // Kaladesh block
