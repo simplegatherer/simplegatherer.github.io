@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MTG simpleGatherer</title>
+    <meta name="author" content="Aleksander Gajewski [adiog@brainfuck.pl]" />
+    <link rel="icon" type="image/png" href="img/icon.png"/>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
+    <link rel="stylesheet" href="gatherer.css" type="text/css" />
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script>
+        var mtg_image_url = 'http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid='
+        var mtg_json_url = 'http://mtgjson.com/json/';
+        var mtg_json_suffix = '-x.json';
+        
+        var static_image = {
+            'color' : {
+            'White' : 'img/w.png',
+            'Blue' : 'img/u.png',
+            'Black' : 'img/b.png',
+            'Red' : 'img/r.png',
+            'Green' : 'img/g.png',
+            'Colorless' : 'img/1.png'
+            }
+        };
+
+        function getCardImageUrl(jsonCard, language)
+        {
+            if (language == "English") {
+                return mtg_image_url + jsonCard.multiverseid + '&type=card';
+            } else {
+                return mtg_image_url + getMultiverseIdByLanguage(jsonCard, language) + '&type=card';
+            }
+        }
+    </script>
+    <script type="text/javascript" src="gatherer.js"></script>
+</head>
+<body onload="main();">
+</body>
+</html>
