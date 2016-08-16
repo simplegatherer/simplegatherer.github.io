@@ -5,6 +5,7 @@ var data = [];
 var output = [];
 
 var refineSearchPopup;
+var howtoPopup;
 var resultsContainer;
 
 
@@ -19,17 +20,17 @@ var config = {
             //'Italian': 0,
             //'Japanese': 0,
             //'Korean': 0,
-            //'Portuguese (Brazil)': 0,
+            'Portuguese (Brazil)': 0,
             'Russian': 0,
             //'Spanish': 0
         },
         'set' : {
             // Value sets
-//            'MMA': 0, 'MM2': 0, 'EMA': 0, // 'VMA' : 0,
+            //'MMA': 0, 'MM2': 0, 'EMA': 0, // 'VMA' : 0,
             // Conspiracy sets
-//            'CNS': 0, // 'CN2' : 0,
+            //'CNS': 0, // 'CN2' : 0,
             // Commander sets
-//            'C14': 0, 'C15': 0, // 'C16': 1
+            //'C14': 0, 'C15': 0, // 'C16': 1
             /*
             // Duel Decks
             'DD3_DVD' : 1,       'DD3_EVG' : 1,             'DD3_GVL' : 1,             'DD3_JVC' : 1,             'BVC' : 1,
@@ -63,11 +64,11 @@ var config = {
             'M15' : 0,
             */
             // Khans of Tarkir
-//            'KTK' : 1, 'FRF' : 1, 'DTK' : 1,
+            //'KTK' : 1, 'FRF' : 1, 'DTK' : 1,
             // Origins
-//            'ORI' : 1,
+            'ORI' : 1,
             // Battle for Zendikar block
-//            'BFZ' : 1, 'OGW' : 1, // 'EXP' : 1,
+            'BFZ' : 1, 'OGW' : 1, // 'EXP' : 1,
             // Shadows over Innistrad block
             'SOI' : 1, 'EMN' : 1
             // Kaladesh block
@@ -90,7 +91,8 @@ var config = {
     zoom : 240,
     sortable : [ 'set', 'number', 'cmc', 'color', 'type', 'name', 'artist', 'rarity' ],
     sortableSpecial : [ 'language', 'set', 'color', 'rarity', 'type' ],
-    refineSearchVisible : 1,
+    refineSearchVisible : 0,
+    howtoPopupVisible : 0,
     page : 1,
     pages : 1,
     pageSize : 20
@@ -330,6 +332,25 @@ function buildButtonFilter()
     return buttonFilter;
 }
 
+function buildHowToButton()
+{
+    var howtoButton = document.createElement('button');
+
+    howtoButton.innerHTML = 'HowTo';
+    howtoButton.addEventListener('click', function () {
+        config.howtoPopupVisible = (config.howtoPopupVisible + 1) % 2;
+        if (config.howtoPopupVisible == 0) {
+            $(howtoPopup).dialog("close");
+        } else {
+            $(howtoPopup).dialog("open");
+        }
+    });
+    $(howtoButton).button();
+
+    return howtoButton;
+}
+
+
 function buildButtonPrevious()
 {
     var buttonPrevious = document.createElement('button');
@@ -369,6 +390,7 @@ function buildButtons()
 {
     var buttons = document.createElement('div');
 
+    buttons.appendChild(buildHowToButton());
     buttons.appendChild(buildButtonReset());
     buttons.appendChild(buildButtonFilter());
     buttons.appendChild(buildButtonPrevious());
@@ -509,6 +531,44 @@ function buildRefineSearchPopup()
     return refineSearchPopup;
 }
 
+function buildHowToPopup()
+{
+    var howtoPopup = document.createElement('div');
+
+    howtoPopup.innerHTML =
+        "<h3>Slider:</h3>" +
+        "<strong>resize</strong> the cards (left end: display size; right end: zoom on hover)" +
+        "<h3>Omnibox:</h3>" +
+        "<strong>filter</strong> results by name, text, type, artist etc. <br/>" +
+        "<i>e.g.: '1/3 flying', 'zombie', 'deathtouch', 'John Avon'</i><br/>" +
+        "<strong>add an extra criteria</strong> on cmc/power/toughness<br/>" +
+        "one per line and space separated, e.g.:<br/>" +
+        "<i>power > 3<br />toughness < 3</i>" +
+        "<h3>Filter box:</h3>" +
+        "<strong>precisie criteria</strong> by switching fields toggle-mode<br/>" +
+        "(i.e. click once to hide, click twice to show criteria)<br/>" +
+        "<strong>order them</strong> by drag-and-drop:<br/>" +
+        "use first line to order generic criteria<br/>" +
+        "(e.g. <i>cmc -> color -> type -> name -> ...</i>)<br/>" +
+        "then precise the order of criteria per group<br/>" +
+        "(e.g. <i>'mythic rare' -> 'rare' -> ...</i>)";
+
+    $(howtoPopup)
+        .dialog({
+            close: function () {
+                config.howtoPopupVisible = 0;
+                storeConfig();
+            }
+        });    $(howtoPopup).dialog('option', 'width', '700px');
+    if (config.howtoPopupVisible == 0) {
+        $(howtoPopup).dialog("close");
+    } else {
+        $(howtoPopup).dialog("open");
+    }
+
+    return howtoPopup;
+}
+
 function buildAdditionalNavigationButtons()
 {
     var additional_navigation_buttons = document.createElement('div');
@@ -542,6 +602,7 @@ function initializeDocument()
 {
     resultsContainer = buildResultsContainer();
     refineSearchPopup = buildRefineSearchPopup();
+    howtoPopup = buildHowToPopup();
 
     document.body.appendChild(buildCardResizeSlider());
     document.body.appendChild(buildButtons());
