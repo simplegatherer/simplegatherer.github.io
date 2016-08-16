@@ -506,7 +506,6 @@ function buildRefineSearchCriteriaLine(criteriaLineId) {
 function buildRefineSearchPopup()
 {
     var refineSearchPopup = document.createElement('div');
-    refineSearchPopup.title = 'Filter results';
 
     refineSearchPopup.appendChild(buildRefineSearchOrder());
 
