@@ -25,50 +25,8 @@ var config = {
             //'Spanish': 0
         },
         'set' : {
-            // Value sets
-            //'MMA': 0, 'MM2': 0, 'EMA': 0, // 'VMA' : 0,
-            // Conspiracy sets
-            //'CNS': 0, // 'CN2' : 0,
-            // Commander sets
-            //'C14': 0, 'C15': 0, // 'C16': 1
-            /*
-            // Duel Decks
-            'DD3_DVD' : 1,       'DD3_EVG' : 1,             'DD3_GVL' : 1,             'DD3_JVC' : 1,             'BVC' : 1,
-            //
-            'MRD' : 0,            'DST' : 0,             '5DN' : 0,            'CHK' : 0,            'BOK' : 0,
-            'SOK' : 0,            '9ED' : 0,            'RAV' : 0,            'GPT' : 0,            'DIS' : 0,
-            'CSP' : 0,            'TSP' : 0,            'PLC' : 0,            'FUT' : 0,            '10E' : 0,
-            'LRW' : 0,            'MOR' : 0,            'SHM' : 0,            'EVE' : 0,            'ALA' : 0,
-            'CON' : 0,            'ARB' : 0,
-            // Core Set
-            'M10' : 0,
-            // Zendicar block
-            'ZEN' : 0, 'WWK' : 0, 'ROE' : 0,
-            // Core Set
-            'M11' : 0,
-            // 
-            'SOM' : 0, 'MBS' : 0, 'NPH' : 0,
-            // Core Set
-            'M12' : 0,
-            // Innistrad block
-            'ISD' : 0, 'DKA' : 0, 'AVR' : 0,
-            // Core Set
-            'M13' : 0,
-            // Return to Ravnica block
-            'RTR' : 0, 'GTC' : 0, 'DGM' : 0,
-            // Core Set
-            'M14' : 0,
-            // Theros block
-            'THS' : 0, 'BNG' : 0, 'JOU' : 0,
-            // Core Set
-            'M15' : 0,
-            */
-            // Khans of Tarkir
-            //'KTK' : 1, 'FRF' : 1, 'DTK' : 1,
-            // Origins
-            //'ORI' : 1,
             // Battle for Zendikar block
-            'BFZ' : 1, 'OGW' : 1, // 'EXP' : 1,
+            'BFZ' : 1, 'OGW' : 1,
             // Shadows over Innistrad block
             'SOI' : 1, 'EMN' : 1,
             // Kaladesh block
