@@ -18,9 +18,9 @@ var config = {
             'French': 0,
             'German': 0,
             //'Italian': 0,
-            //'Japanese': 0,
+            'Japanese': 0,
             //'Korean': 0,
-            'Portuguese (Brazil)': 0,
+            //'Portuguese (Brazil)': 0,
             'Russian': 0,
             //'Spanish': 0
         },
@@ -66,13 +66,13 @@ var config = {
             // Khans of Tarkir
             //'KTK' : 1, 'FRF' : 1, 'DTK' : 1,
             // Origins
-            'ORI' : 1,
+            //'ORI' : 1,
             // Battle for Zendikar block
             'BFZ' : 1, 'OGW' : 1, // 'EXP' : 1,
             // Shadows over Innistrad block
-            'SOI' : 1, 'EMN' : 1
+            'SOI' : 1, 'EMN' : 1,
             // Kaladesh block
-            // 'KLD': 1, 'AER': 1
+            'KLD': 1 //, 'AER': 1
         },
         'color' : {'White' : 1, 'Blue' : 1, 'Black' : 1, 'Red' : 1, 'Green' : 1, 'Colorless' : 1},
         'rarity' : {'Common' : 1, 'Uncommon' : 1, 'Rare' : 1, 'Mythic Rare' : 1, 'Basic Land' : 1},
