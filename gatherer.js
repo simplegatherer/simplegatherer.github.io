@@ -508,7 +508,7 @@ function buildHowToPopup()
         "use first line to order generic criteria<br/>" +
         "(e.g. <i>cmc -> color -> type -> name -> ...</i>)<br/>" +
         "then precise the order of criteria per group<br/>" +
-        "(e.g. <i>'mythic rare' -> 'rare' -> ...</i>)";
+        "(e.g. <i>'mythic rare' -> 'rare' -> ...</i>)<br/><br/>";
 
     $(howtoPopup)
         .dialog({
