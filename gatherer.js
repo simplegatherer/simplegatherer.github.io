@@ -220,6 +220,8 @@ function callbackHoverOn(that, ui)
     return function() {
         if (that.hasClass('split')) {
             that.css('transform', 'rotate(90deg) scale(' + (ui.values[1] / ui.values[0]) + ')');
+        } else if (that.hasClass('aftermath')) {
+            that.css('transform', 'rotate(-90deg) scale(' + (ui.values[1] / ui.values[0]) + ')');
         } else {
             that.css('transform', 'scale(' + (ui.values[1] / ui.values[0]) + ')');
         }
