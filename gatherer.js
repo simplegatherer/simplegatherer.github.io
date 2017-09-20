@@ -32,7 +32,9 @@ var config = {
             // Kaladesh block
             'KLD': 1, 'AER': 1,
             // Amonkhet block
-            'AKH': 1, 'HOU': 1
+            'AKH': 1, 'HOU': 1,
+            // Ixalan block
+            'XLN': 1
         },
         'color' : {'White' : 1, 'Blue' : 1, 'Black' : 1, 'Red' : 1, 'Green' : 1, 'Colorless' : 1},
         'rarity' : {'Common' : 1, 'Uncommon' : 1, 'Rare' : 1, 'Mythic Rare' : 1, 'Basic Land' : 1},
