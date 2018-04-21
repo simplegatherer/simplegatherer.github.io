@@ -34,7 +34,9 @@ var config = {
             // Amonkhet block
             'AKH': 1, 'HOU': 1,
             // Ixalan block
-            'XLN': 1
+            'XLN': 1, 'RIX': 1,
+            // Dominaria
+            'DOM': 1
         },
         'color' : {'White' : 1, 'Blue' : 1, 'Black' : 1, 'Red' : 1, 'Green' : 1, 'Colorless' : 1},
         'rarity' : {'Common' : 1, 'Uncommon' : 1, 'Rare' : 1, 'Mythic Rare' : 1, 'Basic Land' : 1},
